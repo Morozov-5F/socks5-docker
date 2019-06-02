@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  dante:
+    build:
+      context: .
+      args:
+        SOCKET_USER: "${SOCKET_USER}"
+        SOCKET_PASSWORD: "${SOCKET_PASSWORD}"
+        SOCKD_CONF_FILE: "${SOCKD_CONF_FILE}"
+    ports:
+    - "${SOCKET_PORT}:1080"
+    restart: always
